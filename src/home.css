@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Koulen';
+    src: url('./fonts/Koulen-Regular.ttf');
+}
+
+body {
+    background-color: #2b46ab;
+}
+
+nav {
+    background-color: white;
+    margin-bottom: 35px;
+    
+}
+
+#nav-links-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 25% 0;
+}
+
+.nav-link {
+    font-size: 32px;
+    font-family: 'Koulen', sans-serif;
+    color: #fcba03;
+}
+
+li {
+    list-style: none;  
+}
+
+.letter {
+    height: 150px;
+    width: auto;
+    margin: 0 3px 7px;
+}
+
+#main-image {
+    height: 400px;
+    width: auto;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+#hours-container {
+    background-color: white;
+    width: 300px;
+}
+
+#hours-inner-container {
+    display: flex;
+}
+
+#days-container {
+    background-color: lightblue;
+}
+
+#times-container {
+    background-color: lightcoral;
+}
+
+.heading {
+    font-family: 'Koulen', sans-serif;
+    font-size: 32px;
+}
