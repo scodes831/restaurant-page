@@ -43,13 +43,22 @@ import sImage from './images/s.png';
     contactLink.textContent = "Contact";
 
     //RESTAURANT TITLE
+
+    const content = document.createElement('div');
+    content.setAttribute('id', 'content-container');
+    page.appendChild(content);
+    
+    const title = document.createElement('div');
+    title.setAttribute('id', 'title');
+    content.appendChild(title);
+
     const titleRow1 = document.createElement('div');
-    titleRow1.classList.add('restaurant-name', 'row-two');
-    page.appendChild(titleRow1);
+    titleRow1.setAttribute('id', 'title-row-one');
+    title.appendChild(titleRow1);
 
     const titleRow2 = document.createElement('div');
-    titleRow2.classList.add('restaurant-name', 'row-two')
-    page.appendChild(titleRow2);
+    titleRow2.setAttribute('id', 'title-row-two');
+    title.appendChild(titleRow2);
 
     const wIcon = document.createElement('img');
     wIcon.classList.add('letter');
@@ -116,18 +125,15 @@ import sImage from './images/s.png';
     sIcon2.src = sImage;
     titleRow2.appendChild(sIcon2);
 
-    //MAIN IMAGE
-    const imageMain = document.createElement('img');
-    imageMain.setAttribute('id', 'main-image');
-    imageMain.src = wafflesImage;
-    page.appendChild(imageMain);
-
     //INFO SECTION
+    const infoContainer = document.createElement('div');
+    infoContainer.setAttribute('id', 'info-container');
+    page.appendChild(infoContainer);
 
     //HOURS
     const hoursContainer = document.createElement('div');
     hoursContainer.setAttribute('id', 'hours-container');
-    page.appendChild(hoursContainer);
+    infoContainer.appendChild(hoursContainer);
 
     const hoursHeading = document.createElement('h2');
     hoursHeading.classList.add('heading');
@@ -180,6 +186,7 @@ import sImage from './images/s.png';
 
     const timesList = document.createElement('ul');
     timesContainer.appendChild(timesList);
+    timesList.setAttribute('id', 'times-list');
 
     const sunTimes = document.createElement('li');
     timesList.appendChild(sunTimes);
@@ -213,7 +220,7 @@ import sImage from './images/s.png';
     //SPECIALS
     const specialsContainer = document.createElement('div');
     specialsContainer.setAttribute('id', 'specials-container');
-    page.appendChild(specialsContainer);
+    infoContainer.appendChild(specialsContainer);
 
     const specialsHeading = document.createElement('h2');
     specialsHeading.classList.add('heading');
@@ -226,22 +233,22 @@ import sImage from './images/s.png';
     const specialsItem1 = document.createElement('li');
     specialsItem1.classList.add('specials-item');
     specialsContainer.appendChild(specialsItem1);
-    specialsItem1.textContent = "Daily Special 1"
+    specialsItem1.textContent = "Monday: 3.99 Classic Waffles";
 
     const specialsItem2 = document.createElement('li');
     specialsItem2.classList.add('specials-item');
     specialsContainer.appendChild(specialsItem2);
-    specialsItem2.textContent = "Daily Special 2"
+    specialsItem2.textContent = "Tuesday: Free juice with any entree purchase";
 
     const specialsItem3 = document.createElement('li');
     specialsItem3.classList.add('specials-item');
     specialsContainer.appendChild(specialsItem3);
-    specialsItem3.textContent = "Daily Special 3"
+    specialsItem3.textContent = "Wednesday: $1 off any specialty waffle entree";
 
     const specialsItem4 = document.createElement('li');
     specialsItem4.classList.add('specials-item');
     specialsContainer.appendChild(specialsItem4);
-    specialsItem4.textContent = "Daily Special 4"
+    specialsItem4.textContent = "Thursday: Free fruit cup with any entree purchase";
 
     //FOOTER
     const footer = document.createElement('footer');

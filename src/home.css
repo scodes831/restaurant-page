@@ -40,11 +40,9 @@ li {
     list-style: none;  
 }
 
-/* #content {
-    display: grid;
-    justify-content: center;
-    background-color: pink;
-} */
+#content {
+    
+}
 
 .letter {
     height: 150px;
@@ -74,14 +72,13 @@ li {
 
 #hours-inner-container {
     display: flex;
+    margin: 0 60px 0;
+    justify-content: space-between;
 }
 
-#days-container {
-    background-color: lightblue;
-}
-
-#times-container {
-    background-color: lightcoral;
+#days-list > li, #times-list > li {
+    font-size: 24px;
+    margin-bottom: 6px;
 }
 
 #specials-container {
@@ -92,5 +89,8 @@ li {
 
 .specials-item {
     font-size: 20px;
+}
+
+footer {
 }
 
