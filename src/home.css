@@ -25,14 +25,26 @@ nav {
 }
 
 .nav-link {
-    font-size: 32px;
+    font-size: 38px;
     font-family: 'Koulen', sans-serif;
     color: #fcba03;
+    text-shadow: 1px 1px rgba(0,0,0,.8);
+}
+
+.nav-link:hover{
+    cursor: pointer;
+    color: #e6ad11;
 }
 
 li {
     list-style: none;  
 }
+
+/* #content {
+    display: grid;
+    justify-content: center;
+    background-color: pink;
+} */
 
 .letter {
     height: 150px;
@@ -40,16 +52,24 @@ li {
     margin: 0 3px 7px;
 }
 
-#main-image {
-    height: 400px;
-    width: auto;
-    border-radius: 4px;
-    margin-top: 20px;
+#info-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 75px;
 }
 
-#hours-container {
+#hours-container, #specials-container {
     background-color: white;
-    width: 300px;
+    width: 400px;
+    border-radius: 6px;
+    padding: 30px;
+    box-shadow: 2px 3px 5px rgba(0,0,0,.2);
+}
+
+.heading {
+    font-family: 'Koulen', sans-serif;
+    font-size: 36px;
+    text-align: center;
 }
 
 #hours-inner-container {
@@ -64,7 +84,13 @@ li {
     background-color: lightcoral;
 }
 
-.heading {
-    font-family: 'Koulen', sans-serif;
-    font-size: 32px;
+#specials-container {
+    background-color: #fcba03;
+    margin-left: 20px;
+
 }
+
+.specials-item {
+    font-size: 20px;
+}
+
