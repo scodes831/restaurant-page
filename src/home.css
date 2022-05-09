@@ -24,8 +24,9 @@ body {
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 75px auto;
+    /* justify-content: space-between; */
     align-items: center;
     background-color: white;
     margin-bottom: 55px;
@@ -39,7 +40,8 @@ nav {
 }
 
 #nav-links-container {
-    margin-right: 28%;
+    justify-content: center;
+    margin-right: 125px;
     display: flex;
 }
 
