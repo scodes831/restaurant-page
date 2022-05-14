@@ -61,12 +61,17 @@ li {
     list-style: none;  
 }
 
+#outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #about-container {
     background-color: white;
     display: flex;
     flex-direction: column;
     border-radius: 6px;
-    margin-left: 0 auto;
     margin-top: 28px;
     padding: 35px;
     width: 50%;
