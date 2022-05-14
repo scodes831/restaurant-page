@@ -4,10 +4,14 @@ import wafflesAboutImage from "./images/waffles-about-page.jpg";
 
 export function showAboutPage() {
     const page = document.getElementById('content');
+    
+    const outerContainer = document.createElement('div');
+    outerContainer.setAttribute('id', 'outer-container');
+    page.appendChild(outerContainer);
 
     const aboutContainer = document.createElement('div');
     aboutContainer.setAttribute('id', 'about-container');
-    page.appendChild(aboutContainer);
+    outerContainer.appendChild(aboutContainer);
 
     const aboutTitle = document.createElement('h1');
     aboutTitle.textContent = "Our Restaurant";
