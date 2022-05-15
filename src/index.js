@@ -32,42 +32,87 @@ function showNavBar() {
 
     const homeLink = document.createElement('li');
     navLinks.appendChild(homeLink);
-    homeLink.classList.add('nav-link');
+    homeLink.classList.add('nav-link', 'active');
+    homeLink.setAttribute('id', 'home');
     homeLink.textContent = 'Home';
     homeLink.addEventListener('click', homepage);
 
     const aboutLink = document.createElement('li');
     navLinks.appendChild(aboutLink);
-    aboutLink.classList.add('nav-link');
+    aboutLink.classList.add('nav-link', 'inactive');
     aboutLink.setAttribute('id', 'about');
     aboutLink.textContent = 'About';
-    let aboutStatus = "";
-    aboutLink.addEventListener('click', e => {
-        console.log(e.target.id);
-        if (aboutStatus === "active") {
-            return;
-        } else if (aboutStatus === "" || aboutStatus === "inactive") {
-            aboutStatus = "active";
-            showAboutPage();
-        }
-        console.log(aboutStatus);
-    });
+    // let aboutStatus = "";
+    // aboutLink.addEventListener('click', e => {
+    //     console.log(e.target.id);
+    //     if (aboutStatus === "active") {
+    //         return;
+    //     } else if (aboutStatus === "" || aboutStatus === "inactive") {
+    //         aboutStatus = "active";
+    //         showAboutPage();
+    //     }
+    //     console.log(aboutStatus);
+    // });
 
     const menuLink = document.createElement('li');
     navLinks.appendChild(menuLink);
-    menuLink.classList.add('nav-link');
+    menuLink.classList.add('nav-link', 'inactive');
     menuLink.setAttribute('id', 'menu');
     menuLink.textContent = "Menu";
-    // menuLink.addEventListener('click', showMenuPage);
+    // // menuLink.addEventListener('click', showMenuPage);
+    // let menuStatus = "";
+    // menuLink.addEventListener('click', e => {
+    //     console.log(e.target.id);
+    //     if (menuStatus === "active") {
+    //         return;
+    //     } else if (menuStatus === "" || menuStatus === "inactive") {
+    //         menuStatus = "active";
+    //         // showMenuPage();
+    //     }
+    // })
 
     const contactLink = document.createElement('li');
     navLinks.appendChild(contactLink);
-    contactLink.classList.add('nav-link');
+    contactLink.classList.add('nav-link', 'inactive');
     contactLink.setAttribute('id', 'contact');
     contactLink.textContent = "Contact";
     // contactLink.addEventListener('click', showContactPage);
-};
+    // let contactStatus = "";
+    // contactLink.addEventListener('click', e => {
+    //     console.log(e.target.id);
+    //     if (contactStatus === "active") {
+    //         return;
+    //     } else if (contactStatus === "" | contactStatus === "inactive") {
+    //         contactStatus = "active";
+    //         showContactPage();
+    //     }
+    // })
 
+    const pages = document.querySelectorAll('.nav-link');
+    pages.forEach(page => {
+        page.addEventListener('click', e => {
+            if (page.classList.contains('active')) {
+                console.log("it's already active");
+                return;
+            } else {
+                console.log("it's not active");
+                page.classList.remove('inactive');
+                page.classList.add('active');
+                if (page.id === "home") {
+                    console.log("this is the home page");
+                } else if (page.id === "about") {
+                    showAboutPage();
+                } else if (page.id === "menu") {
+                    console.log("this is the menu page");
+                } else {
+                    console.log("this is the contact page");
+                }
+                
+
+            }
+        })
+    })
+        
 
 
 
@@ -89,7 +134,4 @@ function showNavBar() {
 
 // function showContactPage() {
 //     console.log("contact page clicked");
-// }
-
-
-
+}
