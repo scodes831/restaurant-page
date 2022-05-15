@@ -1,4 +1,5 @@
 import { homepage } from './home.js';
+import { showAboutPage } from './about.js';
 import { Entree } from './menu.js';
 
 import logoImage from './images/logo.png';
@@ -38,47 +39,57 @@ function showNavBar() {
     const aboutLink = document.createElement('li');
     navLinks.appendChild(aboutLink);
     aboutLink.classList.add('nav-link');
+    aboutLink.setAttribute('id', 'about');
     aboutLink.textContent = 'About';
-    aboutLink.addEventListener('click', showAboutPage);
+    let aboutStatus = "";
+    aboutLink.addEventListener('click', e => {
+        console.log(e.target.id);
+        if (aboutStatus === "active") {
+            return;
+        } else if (aboutStatus === "" || aboutStatus === "inactive") {
+            aboutStatus = "active";
+            showAboutPage();
+        }
+        console.log(aboutStatus);
+    });
 
     const menuLink = document.createElement('li');
     navLinks.appendChild(menuLink);
     menuLink.classList.add('nav-link');
+    menuLink.setAttribute('id', 'menu');
     menuLink.textContent = "Menu";
-    menuLink.addEventListener('click', showMenuPage);
+    // menuLink.addEventListener('click', showMenuPage);
 
     const contactLink = document.createElement('li');
     navLinks.appendChild(contactLink);
     contactLink.classList.add('nav-link');
+    contactLink.setAttribute('id', 'contact');
     contactLink.textContent = "Contact";
-    contactLink.addEventListener('click', showContactPage);
+    // contactLink.addEventListener('click', showContactPage);
 };
 
 
 
-function showMenuPage() {
-    console.log("menu page clicked");
-    // const entree1 = new Entree(classicBerryWafflesImage, "Classic Berry Waffles", 6.49, "Classic belgian waffles topped with fresh berries, granola, and whipped cream.");
-    // entree1.addCard();
-    // entree1.addImage();
-    // entree1.addName();
-    // entree1.addPrice();
-    // entree1.addDescription();
 
-    // const entree2 = new Entree(cherryCheesecakeWafflesImage, "Cherry Cheesecake Waffles", 7.49, "Classic belgian waffles topped with cheesecake filling, cherry topping, and whipped cream.");
-    // const entree3 = new Entree(classicWafflesImage, "Classic Waffles", 4.99, "Classic begian waffles dusted with powdered sugar.");
-    // const entree4 = new Entree(waffleSundaeImage, "Waffle Sundae", 3.99, "Classic belgian waffle with a scoop of homemade vanilla ice cream, topped with chocolate sauce, almonds, and whipped cream.");
-    // const entree5 = new Entree(banNutWafflesImage, "Banana Nut Waffles", 7.49, "Classic belgian waffles topped with sliced bananas, cinnamon, walnuts, and powdered sugar.");
-    // const entree6 = new Entree(chocTurtleWafflesImage, "Chocolate Turtle Waffles", 7.49, "Classic belgian waffles topped with chocolate sauce, caramel sauce, pecans, and whipped cream.")
-};
+// function showMenuPage() {
+//     console.log("menu page clicked");
+//     // const entree1 = new Entree(classicBerryWafflesImage, "Classic Berry Waffles", 6.49, "Classic belgian waffles topped with fresh berries, granola, and whipped cream.");
+//     // entree1.addCard();
+//     // entree1.addImage();
+//     // entree1.addName();
+//     // entree1.addPrice();
+//     // entree1.addDescription();
 
-function showAboutPage() {
-    console.log("about page clicked");
-}
+//     // const entree2 = new Entree(cherryCheesecakeWafflesImage, "Cherry Cheesecake Waffles", 7.49, "Classic belgian waffles topped with cheesecake filling, cherry topping, and whipped cream.");
+//     // const entree3 = new Entree(classicWafflesImage, "Classic Waffles", 4.99, "Classic begian waffles dusted with powdered sugar.");
+//     // const entree4 = new Entree(waffleSundaeImage, "Waffle Sundae", 3.99, "Classic belgian waffle with a scoop of homemade vanilla ice cream, topped with chocolate sauce, almonds, and whipped cream.");
+//     // const entree5 = new Entree(banNutWafflesImage, "Banana Nut Waffles", 7.49, "Classic belgian waffles topped with sliced bananas, cinnamon, walnuts, and powdered sugar.");
+//     // const entree6 = new Entree(chocTurtleWafflesImage, "Chocolate Turtle Waffles", 7.49, "Classic belgian waffles topped with chocolate sauce, caramel sauce, pecans, and whipped cream.")
+// };
 
-function showContactPage() {
-    console.log("contact page clicked");
-}
+// function showContactPage() {
+//     console.log("contact page clicked");
+// }
 
 
 
