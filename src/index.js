@@ -1,4 +1,4 @@
-import { homepage } from './home.js';
+import { showHomepage } from './home.js';
 import { showAboutPage } from './about.js';
 import { Entree } from './menu.js';
 
@@ -15,7 +15,7 @@ import waffleSundaeImage from './images/waffle-sundae.jpg';
 const page = document.getElementById('content');
 
 showNavBar();
-homepage();
+showHomepage();
 
 function showNavBar() {
     const nav = document.createElement('nav');
@@ -35,59 +35,27 @@ function showNavBar() {
     homeLink.classList.add('nav-link', 'active');
     homeLink.setAttribute('id', 'home');
     homeLink.textContent = 'Home';
-    homeLink.addEventListener('click', homepage);
 
     const aboutLink = document.createElement('li');
     navLinks.appendChild(aboutLink);
     aboutLink.classList.add('nav-link', 'inactive');
     aboutLink.setAttribute('id', 'about');
     aboutLink.textContent = 'About';
-    // let aboutStatus = "";
-    // aboutLink.addEventListener('click', e => {
-    //     console.log(e.target.id);
-    //     if (aboutStatus === "active") {
-    //         return;
-    //     } else if (aboutStatus === "" || aboutStatus === "inactive") {
-    //         aboutStatus = "active";
-    //         showAboutPage();
-    //     }
-    //     console.log(aboutStatus);
-    // });
-
+    
     const menuLink = document.createElement('li');
     navLinks.appendChild(menuLink);
     menuLink.classList.add('nav-link', 'inactive');
     menuLink.setAttribute('id', 'menu');
     menuLink.textContent = "Menu";
-    // // menuLink.addEventListener('click', showMenuPage);
-    // let menuStatus = "";
-    // menuLink.addEventListener('click', e => {
-    //     console.log(e.target.id);
-    //     if (menuStatus === "active") {
-    //         return;
-    //     } else if (menuStatus === "" || menuStatus === "inactive") {
-    //         menuStatus = "active";
-    //         // showMenuPage();
-    //     }
-    // })
-
+    
     const contactLink = document.createElement('li');
     navLinks.appendChild(contactLink);
     contactLink.classList.add('nav-link', 'inactive');
     contactLink.setAttribute('id', 'contact');
     contactLink.textContent = "Contact";
-    // contactLink.addEventListener('click', showContactPage);
-    // let contactStatus = "";
-    // contactLink.addEventListener('click', e => {
-    //     console.log(e.target.id);
-    //     if (contactStatus === "active") {
-    //         return;
-    //     } else if (contactStatus === "" | contactStatus === "inactive") {
-    //         contactStatus = "active";
-    //         showContactPage();
-    //     }
-    // })
-
+    
+    let userClicks = ["homepage"];
+    
     const pages = document.querySelectorAll('.nav-link');
     pages.forEach(page => {
         page.addEventListener('click', e => {
@@ -95,11 +63,26 @@ function showNavBar() {
                 console.log("it's already active");
                 return;
             } else {
+                console.log(userClicks[userClicks.length-1]);
+                let currentPage = userClicks[userClicks.length-1];
+                if (currentPage === "homepage") {
+                    console.log("remove the homepage");
+                } else if (currentPage === "about" ) {
+                    console.log("remove the about page");
+                    removePage();
+                    // currentPage.classList.remove('active');
+                    // currentPage.classList.add('inactive');
+                } else if (currentPage === "menu") {
+                    console.log("remove the menu page");
+                } else {
+                    console.log("remove the contact page");
+                }
                 console.log("it's not active");
                 page.classList.remove('inactive');
                 page.classList.add('active');
+                userClicks.push(page.id);
                 if (page.id === "home") {
-                    console.log("this is the home page");
+                    showHomepage();
                 } else if (page.id === "about") {
                     showAboutPage();
                 } else if (page.id === "menu") {
@@ -107,11 +90,17 @@ function showNavBar() {
                 } else {
                     console.log("this is the contact page");
                 }
-                
+                console.log(userClicks);
+               
 
             }
         })
-    })
+    });
+
+    function removePage() {
+        const content = document.getElementById('outer-container');
+        content.remove();
+    }
         
 
 
