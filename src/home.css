@@ -26,7 +26,6 @@ body {
 nav {
     display: grid;
     grid-template-columns: 75px auto;
-    /* justify-content: space-between; */
     align-items: center;
     background-color: white;
     margin-bottom: 55px;
@@ -141,5 +140,9 @@ footer {
     align-items: center;
     background-color: white;
     height: 35px;
+}
+
+footer > p {
+    font-size: 16px;
 }
 
