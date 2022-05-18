@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Koulen';
+    src: url('./fonts/Koulen-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Josefin-Sans';
+    src: url('./fonts/JosefinSans-VariableFont_wght.ttf'), url('./fonts/JosefinSans-Italic-VariableFont_wght.ttf');
+}
+
+body {
+    background-color: #2b46ab;
+    font-family: Josefin-Sans, sans-serif;
+}
+
+#content {
+    position: relative;
+    min-height: 100vh;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 75px auto;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 55px;
+}
+
+#logo-nav {
+    height: 50px;
+    width: auto;
+    margin-left: 12px;
+    padding: 3px;
+}
+
+#nav-links-container {
+    justify-content: center;
+    margin-right: 125px;
+    display: flex;
+}
+
+.nav-link {
+    font-size: 36px;
+    font-family: Koulen, sans-serif;
+    color: #fcba03;
+    margin-left: 100px;
+    text-shadow: 1px 1px rgba(0,0,0,.8);
+}
+
+.nav-link:hover{
+    cursor: pointer;
+    color: #e6ad11;
+}
+
+li {
+    list-style: none;  
+}
+
+#content-container {
+    padding-bottom: 35px;
+
+}
+
+#cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 15px;
+    justify-items: center;
+    align-content: center;
+}
+
+.food-card {
+    background-color: white;
+    display: flex;
+    border-radius: 6px;
+    max-width: 750px;
+    padding: 20px;
+}
+
+.food-image {
+    height: 250px;
+    width: auto;
+    max-width: 350px;
+}
+
+.food-inner-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+} 
+
+.food-name {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.food-description {
+    font-size: 24px;
+    margin-bottom: 38px;
+}
+
+.food-price {
+    text-align: right;
+    font-weight: 900;
+    font-size: 26px;
+}
