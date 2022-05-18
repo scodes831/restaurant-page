@@ -61,10 +61,11 @@ li {
     list-style: none;  
 }
 
-#outer-container {
+#outer-about-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 100px;
 }
 
 #about-container {
