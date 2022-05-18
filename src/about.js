@@ -6,7 +6,7 @@ export function showAboutPage() {
     const page = document.getElementById('content');
     
     const outerContainer = document.createElement('div');
-    outerContainer.setAttribute('id', 'outer-container');
+    outerContainer.setAttribute('id', 'outer-about-container');
     page.appendChild(outerContainer);
 
     const aboutContainer = document.createElement('div');
@@ -22,7 +22,7 @@ export function showAboutPage() {
     aboutContainer.appendChild(aboutImage);
 
     const aboutDesc = document.createElement('h2')
-    aboutDesc.textContent = "Welcome to Waffle Madness - let the madness begin! Welcome to Waffle Madness - let the madness begin! Welcome to Waffle Madness - let the madness begin! Welcome to Waffle Madness - let the madness begin! Welcome to Waffle Madness - let the madness begin! Welcome to Waffle Madness - let the madness begin!";
+    aboutDesc.textContent = "Welcome to Waffle Madness - let the madness begin! We are passionate about all things waffles and we have the best waffles in the whole wide world. Come on in and try them for yourself!";
     aboutContainer.appendChild(aboutDesc);
 
 }
