@@ -78,37 +78,43 @@ li {
 .food-card {
     background-color: white;
     display: flex;
+    align-content: center;
     border-radius: 6px;
-    max-width: 750px;
+    max-width: 700px;
     padding: 20px;
 }
 
 .food-image {
-    height: 250px;
+    height: 200px;
     width: auto;
-    max-width: 350px;
+    max-width: 300px;
 }
 
 .food-inner-container {
-    display: flex;
-    flex-direction: column;
-    margin-left: 15px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-left: 10px;
+    align-items: end;
+    position: relative;
 } 
 
+/* .food-inner-container:last-child {
+    align-items: end;
+} */
+
 .food-name {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 600;
     text-align: center;
-    margin-bottom: 18px;
 }
 
 .food-description {
-    font-size: 24px;
-    margin-bottom: 38px;
+    font-size: 20px;
+    font-style: italic;
 }
 
 .food-price {
     text-align: right;
     font-weight: 900;
-    font-size: 26px;
+    font-size: 24px;
 }
