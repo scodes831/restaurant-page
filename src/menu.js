@@ -7,7 +7,15 @@ import cherryCheesecakeWafflesImage from './images/cherry-cheesecake-waffles.jpg
 import chocolateTurtleWafflesImage from './images/chocolate-turtle-waffles.jpg';
 import waffleSundaeImage from './images/waffle-sundae.jpg';
 
-const page = document.getElementById('content');
+
+
+export function showMenuPage() {
+
+    const page = document.getElementById('content');
+
+const cards = document.createElement('div');
+cards.setAttribute('id', 'cards-container');
+page.appendChild(cards);
 
 class FoodItem {
     constructor(image, name, price, description) {
@@ -20,7 +28,7 @@ class FoodItem {
     makeCard() {
         let card = document.createElement('div');
         card.classList.add('food-card');
-        page.appendChild(card);
+        cards.appendChild(card);
         let image = document.createElement('img');
         image.classList.add('food-image');
         card.appendChild(image);
@@ -33,14 +41,14 @@ class FoodItem {
         name.classList.add('food-name');
         foodInnerContainer.appendChild(name);
         name.textContent = this.name;
-        let price = document.createElement('h3');
-        price.classList.add('food-price');
-        foodInnerContainer.appendChild(price);
-        price.textContent = this.price;
         let desc = document.createElement('p');
         desc.classList.add('food-description');
         foodInnerContainer.appendChild(desc);
         desc.textContent = this.description;
+        let price = document.createElement('h3');
+        price.classList.add('food-price');
+        foodInnerContainer.appendChild(price);
+        price.textContent = this.price;
     }
 
 }
@@ -60,8 +68,6 @@ class FoodItems {
         return this.foodItems
     }
 }
-
-export function showMenuPage() {
 
     let entrees = new FoodItems()
 
