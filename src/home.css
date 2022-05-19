@@ -34,7 +34,7 @@ nav {
 #logo-nav {
     height: 50px;
     width: auto;
-    margin-left: 12px;
+    margin: 2px 0 0 12px;
     padding: 3px;
 }
 
@@ -135,6 +135,7 @@ footer {
     position: absolute;
     width: 100%;
     bottom: 0;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
